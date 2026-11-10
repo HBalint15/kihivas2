@@ -1,0 +1,155 @@
+:root {
+    --main: rgb(17, 206, 181)
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    grid-area: n;
+}
+
+header,
+nav {
+    background-color: black;
+    color: rgb(17, 206, 181);
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+header {
+    grid-area: h;
+}
+
+nav div:first-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    width: 75%;
+    margin: auto;
+
+    a {
+        color: var(--main);
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+nav input {
+    border: 1px solid var(--main);
+    border-radius: 1vh;
+    text-align: center;
+    width: 100%;
+    height: 4vh;
+}
+
+#in {
+    width: 400px;
+    height: 10vh;
+    display: grid;
+    margin: auto;
+}
+
+aside {
+    text-align: center;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 1vw;
+    grid-area: as;
+    background-image: linear-gradient(to right, var(--main), rgb(3, 52, 45));
+}
+
+aside div {
+    display: grid;
+    gap: 10px;
+}
+
+aside a {
+    padding: 10px;
+    background-color: black;
+    color: var(--main);
+    border-radius: 1vw;
+    width: 90%;
+    margin: auto;
+}
+
+article {
+    grid-area: ar;
+
+    h2 {
+        font-size: 1.5rem;
+        width: 50%;
+        border-bottom: 2px solid var(--main);
+        padding-bottom: 5px;
+        margin: 20px auto 10px auto;
+        text-align: center;
+    }
+
+    .card {
+        width: 50%;
+        margin: auto;
+        border: 2px solid var(--main);
+        margin-bottom: 25px;
+        display: grid;
+        grid-template-columns: 1fr 8fr;
+    }
+
+    .card img {
+        width: 80%;
+        border-radius: 1vw;
+        margin: auto;
+    }
+
+    p,
+    h4 {
+        margin: 10px;
+    }
+
+    .ar {
+        font-weight: bold;
+
+    }
+
+    .stock {
+        color: green;
+        text-transform: capitalize;
+    }
+
+    .nostock {
+        color: red;
+        text-transform: capitalize;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: "h h" "n n" "as ar";
+}
+
+@media screen and (max-width: 700px) {
+    nav div:first-child {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas: "h" "n" "as" "ar";
+    }
+
+    aside {
+        margin: 5px;
+    }
+}
